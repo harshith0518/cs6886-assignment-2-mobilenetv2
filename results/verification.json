@@ -23,10 +23,13 @@
   "report": {
     "pages": 6,
     "all_pages_visually_reviewed": true,
-    "all_pages_grayscale": true,
-    "sha256": "4291ddddd9e8c3d221309924863ac92386e4c9a5678a1e30db2d854d165ca166",
+    "sha256": "f3bb02d0cc07099a8c05f345724d727a544ccac22cd3a96b0e22e491a0d00534",
     "footers_removed": true,
-    "body_content_unchanged": true
+    "reviewed_at": "2026-09-08T12:15:12",
+    "all_text_black": true,
+    "color_only_inside_figures": true,
+    "all_report_numbers_preserved": true,
+    "wording": "Plain English with common abbreviations"
   },
   "original_source_archive": "https://github.com/harshith0518/cs6886-assignment-2-mobilenetv2/tree/8f4cd45e6ccc7d3c38ac799bae4b4ef101350b71/artifacts/compression/q3_final_grid/source",
   "source_sha256": {
