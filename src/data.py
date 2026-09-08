@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from torchvision.datasets import CIFAR10
 
-from train_baseline import ROOT, build_model, save_json
+from src.train import ROOT, build_model, save_json
 
 
 def prepare(output_dir, download=False):
@@ -62,6 +62,6 @@ def prepare(output_dir, download=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--download", action="store_true", help="Download CIFAR-10 if it is missing")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "artifacts/preparation")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "data/prepared")
     args = parser.parse_args()
     prepare(args.output_dir, args.download)

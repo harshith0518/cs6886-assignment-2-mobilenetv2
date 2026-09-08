@@ -1,4 +1,4 @@
-"""Train the CIFAR-10 baseline. Example: python train_baseline.py --epochs 300"""
+"""Train the CIFAR-10 baseline. Example: python -m src.train --epochs 300"""
 import argparse
 import csv
 import ctypes
@@ -19,8 +19,17 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import datasets, transforms
 from torchvision.models import mobilenet_v2
 
-ROOT = Path(__file__).resolve().parent
-DEFAULT_RUN = ROOT / "artifacts" / "training" / "mobilenetv2_300"
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_RUN = ROOT / "runs/baseline"
+RESULTS = ROOT / "results"
+
+
+def baseline_files(run_dir=None):
+    """Locate the supplied baseline, or the outputs of a new training run."""
+    if run_dir is None:
+        return ROOT / "models/baseline.pt", RESULTS / "baseline.json", RESULTS / "split_indices.npz"
+    folder = Path(run_dir)
+    return folder / "best.pt", folder / "results.json", folder / "split_indices.npz"
 
 
 def replace_with_retry(source, destination, timeout=30.0):
@@ -42,7 +51,7 @@ def replace_with_retry(source, destination, timeout=30.0):
 def save_json(path, data):
     # Write a temporary file first, so a progress read never sees half a JSON file.
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    temporary.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8", newline="\n")
     replace_with_retry(temporary, path)
 
 
@@ -70,7 +79,7 @@ def training_is_running(run_dir=DEFAULT_RUN):
         if not isinstance(info.get("pid"), int):
             return False
         process = psutil.Process(info["pid"])
-        return process.is_running() and any("train_baseline.py" in arg for arg in process.cmdline())
+        return process.is_running() and any(arg == "src.train" or Path(arg).name == "train.py" for arg in process.cmdline())
     except (psutil.Error, OSError, ValueError, KeyError):
         return False
 
@@ -130,9 +139,9 @@ def plot_history(history, path):
     import matplotlib.pyplot as plt
     epochs = [row["epoch"] for row in history]
     fig, axes = plt.subplots(1, 2, figsize=(11, 4))
-    for split in ["train", "val"]:
-        axes[0].plot(epochs, [row[f"{split}_loss"] for row in history], label=split)
-        axes[1].plot(epochs, [row[f"{split}_accuracy"] for row in history], label=split)
+    for split, style in [("train", "-"), ("val", "--")]:
+        axes[0].plot(epochs, [row[f"{split}_loss"] for row in history], style, color="black", label=split)
+        axes[1].plot(epochs, [row[f"{split}_accuracy"] for row in history], style, color="black", label=split)
     axes[0].set_ylabel("Cross-entropy loss (label smoothing 0.05)")
     axes[1].set_ylabel("Accuracy (%)")
     for ax in axes:
@@ -159,7 +168,7 @@ def run_training(args):
         if args.epochs != config["epochs"]:
             raise ValueError("Resume with the original epoch total so the LR schedule stays consistent.")
     else:
-        preparation = json.loads((ROOT / "artifacts/preparation/config.json").read_text())
+        preparation = json.loads((ROOT / "data/prepared/config.json").read_text())
         config = {
             "epochs": args.epochs, "batch_size": args.batch_size,
             "learning_rate": args.lr, "min_lr": 1e-5, "warmup_epochs": 5,
@@ -176,7 +185,7 @@ def run_training(args):
             "preparation": preparation,
         }
         save_json(config_path, config)
-        split_bytes = (ROOT / "artifacts/preparation/split_indices.npz").read_bytes()
+        split_bytes = (ROOT / "data/prepared/split_indices.npz").read_bytes()
         (run_dir / "split_indices.npz").write_bytes(split_bytes)
         (run_dir / "training_source.py").write_text(Path(__file__).read_text(encoding="utf-8"), encoding="utf-8")
 

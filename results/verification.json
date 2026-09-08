@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-09-08T11:41:48",
+  "regression_tests_passed": 8,
+  "baseline_sha256": "d25c1a9daa9de1da2101ae2dd4ec9b7a2524b4828e69803273c6d67d861ad06d",
+  "model_sha256": "09587596a5f90d32c40d6c6a2cbaed0564beb081fdfeed4b59a3495b3588d2c0",
+  "compression": {
+    "configurations": 10,
+    "export_roundtrips_passed": 9,
+    "regenerated_models_byte_identical": 9,
+    "validation_metrics_exact_match": true,
+    "calibration_validation_indices_exact_match": true,
+    "calibration_validation_disjoint": true,
+    "test_images_used": 0,
+    "split_and_normalization_exact_match": true,
+    "native_wandb_panel_axes": 6,
+    "experiment_id": "q3-17ab30b7bdd94332"
+  },
+  "final": {
+    "test_predictions_exact_match": 10000,
+    "test_correct": 9013,
+    "test_accuracy": 90.13
+  },
+  "report": {
+    "pages": 6,
+    "all_pages_visually_reviewed": true,
+    "all_pages_grayscale": true,
+    "sha256": "6010ebecb42a05cd8dbd262d5e356e86850f9f0111733d2f79ab7a44c14fb403"
+  },
+  "original_source_archive": "https://github.com/harshith0518/cs6886-assignment-2-mobilenetv2/tree/8f4cd45e6ccc7d3c38ac799bae4b4ef101350b71/artifacts/compression/q3_final_grid/source",
+  "source_sha256": {
+    "src/compression.py": "fe78c93c766f6c62afaa9219c72c56c5bc141152d8779f014bd594dc53e9bec1",
+    "src/data.py": "9b281043552799e41f67da2002cd0b09a19b1fab7e7185be4ebb8ca0cc77d09f",
+    "src/evaluate.py": "8f0ab91a7774aa5b8e88e9fd02ef70bd52ffae0d49a524d2e1d4ddbe4c6e46a7",
+    "src/report.py": "f4a296b41607af92dfcb334fd9b9648c57468d959967cd9107db76f839f839c8",
+    "src/train.py": "f72c3a6104f139edaa44a670ce9d4fb5b7e659e69ff20265abb13705ad6a46e0",
+    "tests/test_project.py": "fc35f47281ce43484b3179fce2ab879979ca1539ad586e7ac12c13c4ea52a183"
+  },
+  "training_interruption_and_resume_smoke_passed": true
+}

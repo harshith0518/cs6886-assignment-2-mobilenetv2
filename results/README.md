@@ -19,6 +19,6 @@ Model ratios include the complete packed file. Activation ratios estimate packed
 
 [Native W&B Parallel Coordinates chart](https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/reports/Q3---MobileNet-v2-compression-results--VmlldzoxNzg4ODQ3OQ==)
 
-The compact repository retains the baseline and chosen W4A8 model. Intermediate model files can be regenerated with the full-sweep command in README.md.
+The repository keeps the baseline and W4A8. The README sweep command regenerates all nine models.
 
 This check verified the saved numerical results and 1 available packed file(s). Use --check-files after regenerating the sweep to require all nine files.

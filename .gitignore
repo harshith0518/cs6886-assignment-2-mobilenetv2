@@ -1,20 +1,15 @@
-# Local data, environment and temporary work.
+# Local environments, data and experiment outputs.
 .venv/
 data/
+runs/
 tmp/
 __pycache__/
 *.py[cod]
 wandb/
-artifacts/compression/*/wandb_*/
-# Preserve the supplied results; new runs stay local.
-artifacts/training/reproduced/
-artifacts/compression/reproduced/
-artifacts/final_recheck/
-artifacts/final_reproduced/
-artifacts/preparation/
-artifacts/training/*/last.pt
-artifacts/training/*/process.json
-artifacts/training/*/*.log
-artifacts/training/*/training_source.py
-# PDF publication is pending the user's review.
+results/wandb_*/
+# Local copies from the earlier layout.
+artifacts/
+output/
+# Publish only the submission report.
 *.pdf
+!report/Assignment_2_Report.pdf
