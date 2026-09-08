@@ -1,0 +1,4 @@
+# Additional tools for logging Q3 metrics and creating the native W&B chart.
+# Install into the environment described by requirements-notebook.txt.
+wandb==0.29.0
+wandb-workspaces==0.4.11

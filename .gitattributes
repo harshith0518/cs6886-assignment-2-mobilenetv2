@@ -1,0 +1,7 @@
+# Preserve exact bytes for saved source hashes, model files and the PDF.
+* -text
+*.pdf binary
+*.pt binary
+*.mq binary
+*.npz binary
+*.png binary

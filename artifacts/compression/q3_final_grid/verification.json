@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "configurations": 10,
+  "compressed_export_roundtrips": 9,
+  "baseline_sha256": "d25c1a9daa9de1da2101ae2dd4ec9b7a2524b4828e69803273c6d67d861ad06d",
+  "calibration_validation_disjoint": true,
+  "full_validation_split": true,
+  "test_images_used": 0,
+  "file_size_and_ratio_checks": true,
+  "source_sha256": {
+    "manual_compression.py": "a46f78a799b7faaab787f9dff08131b0ad3c0b646eb878df018dff62ea43b16a",
+    "run_compression.py": "1b17db18e94b7a8e0c7be016177003871639314eaec2b3e9378617b294aa861f",
+    "train_baseline.py": "4b15937f7114e118a8cb435a9a77b4bac14370361c7cee9a729c425677a295ce",
+    "report_q3.py": "0cb910fc208e5d3b3d73eec17992e54020de2d787d28b81973340e1bb229e88a"
+  }
+}

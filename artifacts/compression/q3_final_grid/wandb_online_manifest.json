@@ -1,0 +1,66 @@
+{
+  "experiment_id": "q3-17ab30b7bdd94332",
+  "mode": "online",
+  "entity": "harshith7946-indian-institute-of-technology-madras",
+  "project": "cs6886-assignment2-q3",
+  "runs": [
+    {
+      "name": "FP32",
+      "id": "q3-17ab30b7bdd94332-fp32",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-fp32"
+    },
+    {
+      "name": "W8A8",
+      "id": "q3-17ab30b7bdd94332-w8a8",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w8a8"
+    },
+    {
+      "name": "W8A4",
+      "id": "q3-17ab30b7bdd94332-w8a4",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w8a4"
+    },
+    {
+      "name": "W8A2",
+      "id": "q3-17ab30b7bdd94332-w8a2",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w8a2"
+    },
+    {
+      "name": "W4A8",
+      "id": "q3-17ab30b7bdd94332-w4a8",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w4a8"
+    },
+    {
+      "name": "W4A4",
+      "id": "q3-17ab30b7bdd94332-w4a4",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w4a4"
+    },
+    {
+      "name": "W4A2",
+      "id": "q3-17ab30b7bdd94332-w4a2",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w4a2"
+    },
+    {
+      "name": "W2A8",
+      "id": "q3-17ab30b7bdd94332-w2a8",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w2a8"
+    },
+    {
+      "name": "W2A4",
+      "id": "q3-17ab30b7bdd94332-w2a4",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w2a4"
+    },
+    {
+      "name": "W2A2",
+      "id": "q3-17ab30b7bdd94332-w2a2",
+      "url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/runs/q3-17ab30b7bdd94332-w2a2"
+    }
+  ],
+  "report_url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3/reports/Q3---MobileNet-v2-compression-results--VmlldzoxNzg4ODQ3OQ==",
+  "project_url": "https://wandb.ai/harshith7946-indian-institute-of-technology-madras/cs6886-assignment2-q3",
+  "native_chart_published": true,
+  "uploaded_metrics_verified": true,
+  "native_chart_roundtrip_verified": true,
+  "publication_source_file": "source/report_q3_published.py",
+  "publication_source_sha256": "6548c6ec710d8ff570a2f74cb954ecff81b18ce6a040530afaaeaeb650d56f53",
+  "completed_at": "2026-09-08T07:12:19"
+}

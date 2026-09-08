@@ -1,0 +1,9 @@
+{
+  "best_epoch": 284,
+  "best_validation_accuracy": 93.88,
+  "test_accuracy": 92.64,
+  "test_loss": 0.28490813374519347,
+  "completed_epochs": 300,
+  "target_at_least_90_met": true,
+  "model_tensor_mb": 9.083592
+}

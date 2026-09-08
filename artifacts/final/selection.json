@@ -1,0 +1,10 @@
+{
+  "setting": "W4A8",
+  "min_validation_accuracy": 90.0,
+  "rule": "smallest stored model among settings meeting the validation accuracy limit",
+  "validation_accuracy": 90.96,
+  "model_sha256": "09587596a5f90d32c40d6c6a2cbaed0564beb081fdfeed4b59a3495b3588d2c0",
+  "baseline_sha256": "d25c1a9daa9de1da2101ae2dd4ec9b7a2524b4828e69803273c6d67d861ad06d",
+  "selected_before_test": true,
+  "selected_at": "2026-09-08T07:19:19"
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "test_predictions_reproduced_from_clean_repository": true,
+  "test_images": 10000,
+  "correct": 9013,
+  "test_accuracy": 90.13,
+  "regression_tests_passed": 8,
+  "preparation_split_and_statistics_exact_match": true,
+  "pdf_pages": 6,
+  "pdf_all_pages_visually_reviewed": true,
+  "model_sha256": "09587596a5f90d32c40d6c6a2cbaed0564beb081fdfeed4b59a3495b3588d2c0",
+  "verified_at": "2026-09-08T07:35:41"
+}
