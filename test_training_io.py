@@ -13,7 +13,7 @@ import train_baseline as training
 class TrainingFileTests(unittest.TestCase):
     @unittest.skipUnless(os.name == "nt", "Windows sharing behavior")
     def test_json_save_recovers_when_reader_releases_file(self):
-        with tempfile.TemporaryDirectory(dir=training.ROOT / "tmp") as folder:
+        with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "progress.json"
             path.write_text('{"epoch": 54}', encoding="utf-8")
             kernel = ctypes.WinDLL("kernel32", use_last_error=True)
@@ -41,7 +41,7 @@ class TrainingFileTests(unittest.TestCase):
             training.save_status(Path("status.json"), {"epoch": 55})
 
     def test_failed_checkpoint_keeps_previous_file(self):
-        with tempfile.TemporaryDirectory(dir=training.ROOT / "tmp") as folder:
+        with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "last.pt"
             path.write_bytes(b"previous complete checkpoint")
             with patch.object(training, "replace_with_retry", side_effect=PermissionError("locked")):

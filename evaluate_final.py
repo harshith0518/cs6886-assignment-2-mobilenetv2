@@ -32,7 +32,11 @@ def run(args):
     if not choices:
         raise ValueError("No compressed setting meets the validation accuracy limit.")
     chosen = min(choices, key=lambda row: (row["model_size_mb"], -row["validation_accuracy"]))
-    packed = (source / (chosen["setting"] + ".mq")).read_bytes()
+    model_file = source / (chosen["setting"] + ".mq")
+    # The compact repository keeps only the chosen model from the original sweep.
+    if source == ROOT / "artifacts/compression/q3_final_grid" and not model_file.exists():
+        model_file = ROOT / "artifacts/final" / model_file.name
+    packed = model_file.read_bytes()
     model_hash = hashlib.sha256(packed).hexdigest()
     if results_path.exists():
         previous = json.loads(results_path.read_text())

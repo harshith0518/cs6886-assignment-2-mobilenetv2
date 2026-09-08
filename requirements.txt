@@ -1,0 +1,10 @@
+# Python 3.14.3; tested on Windows with an RTX 3050 Laptop GPU.
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch==2.14.0+cu126
+torchvision==0.29.0+cu126
+numpy==2.5.2
+matplotlib==3.11.1
+pillow==12.3.0
+psutil==7.2.2
+wandb==0.29.0
+wandb-workspaces==0.4.11

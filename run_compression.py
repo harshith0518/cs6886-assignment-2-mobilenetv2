@@ -21,7 +21,7 @@ from manual_compression import (
     calibrate_activations, compress_weights, save_compressed, load_compressed,
 )
 
-DEFAULT_SETTINGS = [(8, 8), (4, 8), (4, 4)]
+DEFAULT_SETTINGS = [(weight, activation) for weight in (8, 4, 2) for activation in (8, 4, 2)]
 
 
 def balanced_subset(indices, labels, per_class, seed):
@@ -62,7 +62,7 @@ def run_experiments(run_dir=DEFAULT_RUN, output_dir=None, preview=False, device=
     snapshot = (run_dir / "best.pt").read_bytes()
     checkpoint_hash = hashlib.sha256(snapshot).hexdigest()
     checkpoint = torch.load(io.BytesIO(snapshot), map_location="cpu", weights_only=False)
-    (output_dir / "baseline_snapshot.pt").write_bytes(snapshot)
+    # Keep the source checkpoint once; its checksum identifies this sweep.
     preparation = checkpoint["config"]["preparation"]
     baseline = build_model(preparation["model"]).eval()
     baseline.load_state_dict(checkpoint["model"])
@@ -165,8 +165,8 @@ if __name__ == "__main__":
     parser.add_argument("--run-dir", default=str(DEFAULT_RUN))
     parser.add_argument("--output-dir")
     parser.add_argument("--preview", action="store_true")
-    parser.add_argument("--device", default="cpu")
-    parser.add_argument("--settings", nargs="+", default=["8/8", "4/8", "4/4"], help="weight/activation bits, e.g. 8/8 4/8")
+    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument("--settings", nargs="+", default=[f"{w}/{a}" for w, a in DEFAULT_SETTINGS], help="weight/activation bits, e.g. 8/8 4/8")
     parser.add_argument("--calibration-per-class", type=int)
     parser.add_argument("--validation-per-class", type=int)
     parser.add_argument("--batch-size", type=int, default=32)

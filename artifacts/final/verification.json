@@ -9,5 +9,7 @@
   "pdf_pages": 6,
   "pdf_all_pages_visually_reviewed": true,
   "model_sha256": "09587596a5f90d32c40d6c6a2cbaed0564beb081fdfeed4b59a3495b3588d2c0",
-  "verified_at": "2026-09-08T07:35:41"
+  "verified_at": "2026-09-08T07:35:41",
+  "compact_repository_test_predictions_exact_match": true,
+  "compact_repository_verified_at": "2026-09-08T11:20:37"
 }

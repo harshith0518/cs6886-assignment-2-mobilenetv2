@@ -1,23 +1,20 @@
+# Local data, environment and temporary work.
 .venv/
 data/
 tmp/
-.ipynb_checkpoints/
 __pycache__/
 *.py[cod]
-# W&B run internals contain machine-specific logs; keep the clean Q3 manifests.
 wandb/
-artifacts/compression/*/wandb_offline/
-artifacts/compression/*/wandb_online/
-submission/
-artifacts/training/*/last.pt
-artifacts/training/*/process.json
-artifacts/training/*/*.log
-artifacts/training/*/recovery_*/
-artifacts/training/*/failed_attempt_*/
+artifacts/compression/*/wandb_*/
+# Preserve the supplied results; new runs stay local.
 artifacts/training/reproduced/
 artifacts/compression/reproduced/
 artifacts/final_recheck/
 artifacts/final_reproduced/
-
-# Keep PDFs local until the report has been reviewed and approved.
+artifacts/preparation/
+artifacts/training/*/last.pt
+artifacts/training/*/process.json
+artifacts/training/*/*.log
+artifacts/training/*/training_source.py
+# PDF publication is pending the user's review.
 *.pdf

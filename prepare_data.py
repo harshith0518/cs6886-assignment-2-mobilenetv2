@@ -1,4 +1,4 @@
-"""Prepare the same CIFAR-10 split and normalization used in the notebook."""
+"""Prepare the class-balanced CIFAR-10 split and training-only normalization."""
 import argparse
 import platform
 from importlib.metadata import version
@@ -41,7 +41,7 @@ def prepare(output_dir, download=False):
     model = build_model(model_config)
     model_config["parameter_count"] = sum(p.numel() for p in model.parameters())
     model_config["uncompressed_tensor_bytes"] = sum(t.numel() * t.element_size() for t in model.state_dict().values())
-    packages = ["torch", "torchvision", "numpy", "matplotlib", "pillow", "ipykernel", "nbformat", "nbclient"]
+    packages = ["torch", "torchvision", "numpy", "matplotlib", "pillow", "psutil"]
     config = {"seed": 42, "dataset": "CIFAR-10", "image_size": 32, "classes": train.classes,
               "splits": {"train": len(train_indices), "validation": len(validation_indices), "test": len(test)},
               "split_method": "seeded permutation within each class; 500 validation examples per class",
