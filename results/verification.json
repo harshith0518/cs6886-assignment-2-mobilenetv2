@@ -24,7 +24,9 @@
     "pages": 6,
     "all_pages_visually_reviewed": true,
     "all_pages_grayscale": true,
-    "sha256": "6010ebecb42a05cd8dbd262d5e356e86850f9f0111733d2f79ab7a44c14fb403"
+    "sha256": "4291ddddd9e8c3d221309924863ac92386e4c9a5678a1e30db2d854d165ca166",
+    "footers_removed": true,
+    "body_content_unchanged": true
   },
   "original_source_archive": "https://github.com/harshith0518/cs6886-assignment-2-mobilenetv2/tree/8f4cd45e6ccc7d3c38ac799bae4b4ef101350b71/artifacts/compression/q3_final_grid/source",
   "source_sha256": {
@@ -35,5 +37,17 @@
     "src/train.py": "f72c3a6104f139edaa44a670ce9d4fb5b7e659e69ff20265abb13705ad6a46e0",
     "tests/test_project.py": "fc35f47281ce43484b3179fce2ab879979ca1539ad586e7ac12c13c4ea52a183"
   },
-  "training_interruption_and_resume_smoke_passed": true
+  "training_interruption_and_resume_smoke_passed": true,
+  "question_paper_review": {
+    "paper_sha256": "c6b3ea29bee5013f7ad6eec9d1421847b9982fdfbbd9fe243816d5e16254be46",
+    "covered": [
+      "Q1",
+      "Q2",
+      "Q4",
+      "Q5"
+    ],
+    "Q3": "Results and native W&B panel verified; PDF embeds a local companion and links the native chart. Add a native screenshot/export for strict PDF compliance.",
+    "wandb_runs_rechecked": 10,
+    "regression_tests_rechecked": 8
+  }
 }
